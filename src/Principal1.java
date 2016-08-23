@@ -193,7 +193,7 @@ public class Principal1 extends javax.swing.JFrame {
 
     private void cmdLlenarAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLlenarAutoActionPerformed
         // TODO add your handling code here:
-        double n;
+        int n;
         for (int i=0; i<v.length; i++) {
         n= (int) (Math.random()*50+1);
         
