@@ -54,7 +54,7 @@ public class Principal1 extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setText("Longitud:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 50, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 14, 60, 20));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 110, 40));
 
@@ -63,7 +63,7 @@ public class Principal1 extends javax.swing.JFrame {
                 txtLongitudKeyTyped(evt);
             }
         });
-        getContentPane().add(txtLongitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 80, 20));
+        getContentPane().add(txtLongitud, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 80, 100, 30));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Opciones"));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -74,21 +74,21 @@ public class Principal1 extends javax.swing.JFrame {
                 cmdCrearActionPerformed(evt);
             }
         });
-        jPanel2.add(cmdCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 100, -1));
+        jPanel2.add(cmdCrear, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 130, -1));
 
         cmdLlenarManual.setText("Llenar Manual");
-        jPanel2.add(cmdLlenarManual, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 100, -1));
+        jPanel2.add(cmdLlenarManual, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 130, -1));
 
         cmdLlenarAuto.setText("Llenar Auto");
-        jPanel2.add(cmdLlenarAuto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 100, -1));
+        jPanel2.add(cmdLlenarAuto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, 130, -1));
 
         cmdMostrar.setText("Mostrar");
-        jPanel2.add(cmdMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 100, -1));
+        jPanel2.add(cmdMostrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 130, -1));
 
         cmdBorrar.setText("Borrar");
-        jPanel2.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 100, -1));
+        jPanel2.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 130, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, 120, 180));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, 180, 180));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Resultado"));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -111,7 +111,7 @@ public class Principal1 extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this,"Digite la longitud","ERROR",JOptionPane.ERROR_MESSAGE);
         
         txtLongitud.requestFocusInWindow();
-        }else if (txtLongitud.getText().trim().equals("0")){
+        }else if (Integer.parseInt(txtLongitud.getText().trim())==0){
         JOptionPane.showMessageDialog(this, "La longitud no puede ser cero","ERROR",JOptionPane.ERROR_MESSAGE);
         txtLongitud.requestFocusInWindow();
         
