@@ -180,7 +180,7 @@ public class Principal1 extends javax.swing.JFrame {
     private void cmdLlenarManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLlenarManualActionPerformed
         // TODO add your handling code here:
         double n;
-        int sw;
+        int sw,res;
         for (int i=0; i<v.length; i++) {
           do{
                sw = 1;
@@ -192,8 +192,15 @@ public class Principal1 extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Digite un número válido","ERROR",JOptionPane.ERROR_MESSAGE);
             }catch(NullPointerException e){
                 sw = 0;
-                JOptionPane.showMessageDialog(this,"No puedes salir","ERROR",JOptionPane.ERROR_MESSAGE);
+                res=JOptionPane.showConfirmDialog(this,"¿Seguro que desea sali?","Salir",JOptionPane.YES_NO_OPTION);
+               if (res==0){
+               sw =1;
+                i=v.length;
+               }else{
+               sw = 0;
+               }
             }
+            
             
           } while(sw==0); 
         }
