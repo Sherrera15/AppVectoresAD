@@ -180,11 +180,24 @@ public class Principal1 extends javax.swing.JFrame {
     private void cmdLlenarManualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLlenarManualActionPerformed
         // TODO add your handling code here:
         double n;
+        int sw;
         for (int i=0; i<v.length; i++) {
+          do{
+               sw = 1;
+            try{
         n= Double.parseDouble(JOptionPane.showInputDialog(this, "Digite el elemento en la posicion"+i));
         v[i]=n;
-        
+            }catch(NumberFormatException e) {
+                sw=0;
+                JOptionPane.showMessageDialog(this, "Digite un número válido","ERROR",JOptionPane.ERROR_MESSAGE);
+            }catch(NullPointerException e){
+                sw = 0;
+                JOptionPane.showMessageDialog(this,"No puedes salir","ERROR",JOptionPane.ERROR_MESSAGE);
+            }
+            
+          } while(sw==0); 
         }
+    
         cmdCrear.setEnabled(false);
         cmdLlenarManual.setEnabled(false);
         cmdLlenarAuto.setEnabled(false);
