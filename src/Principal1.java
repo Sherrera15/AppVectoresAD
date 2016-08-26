@@ -19,6 +19,13 @@ public class Principal1 extends javax.swing.JFrame {
     double v[];
     public Principal1() {
         initComponents();
+        cmdCrear.setEnabled(true);
+        cmdLlenarManual.setEnabled(false);
+        cmdLlenarAuto.setEnabled(false);
+        cmdMostrar.setEnabled(false);
+        cmdBorrar.setEnabled(true);
+        
+        txtLongitud .setEditable(true);
     }
 
     /**
@@ -49,7 +56,7 @@ public class Principal1 extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("JasmineUPC", 3, 24)); // NOI18N
         jLabel1.setText("MANEJO DE VECTORES");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, -1, -1));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos Iniciales"));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -109,7 +116,7 @@ public class Principal1 extends javax.swing.JFrame {
         });
         jPanel2.add(cmdBorrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 130, -1));
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 50, 180, 180));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, 180, 180));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Resultado"));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -123,7 +130,8 @@ public class Principal1 extends javax.swing.JFrame {
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, 190, 130));
 
-        pack();
+        setSize(new java.awt.Dimension(552, 360));
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmdCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCrearActionPerformed
@@ -142,6 +150,14 @@ public class Principal1 extends javax.swing.JFrame {
         longitud = Integer.parseInt(txtLongitud.getText().trim());
         v= new double [longitud];
         JOptionPane.showMessageDialog (this, "El vector se ha creado exitosamente");
+        
+        cmdCrear.setEnabled(false);
+        cmdLlenarManual.setEnabled(true);
+        cmdLlenarAuto.setEnabled(true);
+        cmdMostrar.setEnabled(false);
+        cmdBorrar.setEnabled(true);
+        
+        txtLongitud.setEditable(false);
         
         
         }
@@ -169,6 +185,11 @@ public class Principal1 extends javax.swing.JFrame {
         v[i]=n;
         
         }
+        cmdCrear.setEnabled(false);
+        cmdLlenarManual.setEnabled(false);
+        cmdLlenarAuto.setEnabled(false);
+        cmdMostrar.setEnabled(true);
+        cmdBorrar.setEnabled(true);
     
         
     }//GEN-LAST:event_cmdLlenarManualActionPerformed
@@ -179,6 +200,11 @@ public class Principal1 extends javax.swing.JFrame {
         txtResultado.append(v[i]+ " ");
         
         }
+        cmdCrear.setEnabled(false);
+        cmdLlenarManual.setEnabled(false);
+        cmdLlenarAuto.setEnabled(false);
+        cmdMostrar.setEnabled(false);
+        cmdBorrar.setEnabled(true);
         
     }//GEN-LAST:event_cmdMostrarActionPerformed
 
@@ -189,6 +215,14 @@ public class Principal1 extends javax.swing.JFrame {
         
         v = null;
         txtLongitud.requestFocusInWindow();
+        
+        cmdCrear.setEnabled(true);
+        cmdLlenarManual.setEnabled(false);
+        cmdLlenarAuto.setEnabled(false);
+        cmdMostrar.setEnabled(false);
+        cmdBorrar.setEnabled(true);
+        
+        txtLongitud.setEditable(true);
     }//GEN-LAST:event_cmdBorrarActionPerformed
 
     private void cmdLlenarAutoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLlenarAutoActionPerformed
@@ -198,9 +232,14 @@ public class Principal1 extends javax.swing.JFrame {
         n= (int) (Math.random()*50+1);
         
         v[i]=n;
-        
-        JOptionPane.showMessageDialog(this, "Vector Llenado Correctamente");
         }
+        JOptionPane.showMessageDialog(this, "Vector Llenado Correctamente");
+        
+        cmdCrear.setEnabled(false);
+        cmdLlenarManual.setEnabled(false);
+        cmdLlenarAuto.setEnabled(false);
+        cmdMostrar.setEnabled(true);
+        cmdBorrar.setEnabled(true);
     }//GEN-LAST:event_cmdLlenarAutoActionPerformed
 
     /**
