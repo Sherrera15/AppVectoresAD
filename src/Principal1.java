@@ -181,6 +181,7 @@ public class Principal1 extends javax.swing.JFrame {
         // TODO add your handling code here:
         double n;
         int sw,res;
+        boolean aux =true;
         for (int i=0; i<v.length; i++) {
           do{
                sw = 1;
@@ -196,6 +197,7 @@ public class Principal1 extends javax.swing.JFrame {
                if (res==0){
                sw =1;
                 i=v.length;
+                aux = false;
                }else{
                sw = 0;
                }
@@ -208,7 +210,7 @@ public class Principal1 extends javax.swing.JFrame {
         cmdCrear.setEnabled(false);
         cmdLlenarManual.setEnabled(false);
         cmdLlenarAuto.setEnabled(false);
-        cmdMostrar.setEnabled(true);
+        cmdMostrar.setEnabled(aux);
         cmdBorrar.setEnabled(true);
     
         
